@@ -13,8 +13,8 @@ COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
+
 # Copy project files
 COPY . /app/
-
-# Run server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Run server with gunicorn
+CMD ["gunicorn", "ArafaBE.wsgi:application", "--bind", "0.0.0.0:8000"]
