@@ -8,4 +8,5 @@ services:
     volumes:
       - .:/app
     environment:
-      - DEBUG=1
+      - DEBUG=0
+    command: gunicorn ArafaBE.wsgi:application --bind 0.0.0.0:8000
