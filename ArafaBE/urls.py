@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("crud/", include("crud.urls")),
     path("admin/", admin.site.urls),
-    path("arafaAdmin/", admin.site.urls),
+    path("bgImage/",  include("bgImages.urls")),
 ]
 
 if settings.DEBUG:
